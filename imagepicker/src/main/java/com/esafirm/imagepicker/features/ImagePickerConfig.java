@@ -3,6 +3,7 @@ package com.esafirm.imagepicker.features;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 
 import com.esafirm.imagepicker.features.common.BaseConfig;
@@ -112,7 +113,7 @@ public class ImagePickerConfig extends BaseConfig implements Parcelable {
         this.imageTitle = imageTitle;
     }
 
-    public String getDoneButtonText() {
+    public @Nullable String getDoneButtonText() {
         return doneButtonText;
     }
 
