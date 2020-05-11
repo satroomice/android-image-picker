@@ -33,7 +33,12 @@ public class DefaultCameraModule implements CameraModule, Serializable {
         if (imageFile != null) {
             Context appContext = context.getApplicationContext();
             String providerName = String.format(Locale.ENGLISH, "%s%s", appContext.getPackageName(), ".imagepicker.provider");
-            Uri uri = FileProvider.getUriForFile(appContext, providerName, imageFile);
+            Uri uri;
+            try {
+                uri = FileProvider.getUriForFile(appContext, providerName, imageFile);
+            } catch (IllegalArgumentException e) {
+                uri = Uri.fromFile(imageFile);
+            }
             currentImagePath = "file:" + imageFile.getAbsolutePath();
             intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
 
