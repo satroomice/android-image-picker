@@ -2,6 +2,8 @@ package com.esafirm.imagepicker.helper;
 
 import android.content.Context;
 
+import androidx.annotation.Nullable;
+
 import com.esafirm.imagepicker.R;
 import com.esafirm.imagepicker.features.ImagePickerConfig;
 import com.esafirm.imagepicker.features.IpCons;
@@ -48,7 +50,7 @@ public class ConfigUtils {
     }
 
     public static String getDoneButtonText(Context context, ImagePickerConfig config) {
-        final String doneButtonText = config.getDoneButtonText();
+        final @Nullable String doneButtonText = config.getDoneButtonText();
         return ImagePickerUtils.isStringEmpty(doneButtonText)
                 ? context.getString(R.string.ef_done)
                 : doneButtonText;
