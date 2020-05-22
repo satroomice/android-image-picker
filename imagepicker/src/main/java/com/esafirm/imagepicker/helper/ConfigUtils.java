@@ -49,7 +49,10 @@ public class ConfigUtils {
                 : configImageTitle;
     }
 
-    public static String getDoneButtonText(Context context, ImagePickerConfig config) {
+    public static String getDoneButtonText(Context context, @Nullable ImagePickerConfig config) {
+        if (config == null) {
+            return context.getString(R.string.ef_done);
+        }
         final @Nullable String doneButtonText = config.getDoneButtonText();
         return ImagePickerUtils.isStringEmpty(doneButtonText)
                 ? context.getString(R.string.ef_done)
