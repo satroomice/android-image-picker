@@ -501,7 +501,7 @@ public class ImagePickerFragment extends Fragment implements ImagePickerView {
     }
 
     public boolean isShowDoneButton() {
-        return recyclerViewManager.isShowDoneButton();
+        return recyclerViewManager != null && recyclerViewManager.isShowDoneButton();
     }
 
     @Override

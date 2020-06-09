@@ -192,7 +192,7 @@ public class RecyclerViewManager {
     public boolean isShowDoneButton() {
         return !isDisplayingFolderView()
                 && !imageAdapter.getSelectedImages().isEmpty()
-                && (config.getReturnMode() != ReturnMode.ALL && config.getReturnMode() != ReturnMode.GALLERY_ONLY);
+                && (config != null && config.getReturnMode() != ReturnMode.ALL && config.getReturnMode() != ReturnMode.GALLERY_ONLY);
     }
 
 }
